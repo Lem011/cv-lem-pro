@@ -148,7 +148,18 @@ function showToast(message) {
     document.body.appendChild(toast);
   }
 
-  toast.innerHTML = `<i class="fas fa-info-circle gold-text"></i> <span>${message}</span>`;
+  // Clear previous content securely
+  toast.replaceChildren();
+
+  const icon = document.createElement('i');
+  icon.className = 'fas fa-info-circle gold-text';
+
+  const textSpan = document.createElement('span');
+  textSpan.textContent = message;
+
+  toast.appendChild(icon);
+  toast.appendChild(textSpan);
+
   toast.classList.add('show');
 
   setTimeout(() => {
