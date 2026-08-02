@@ -135,16 +135,20 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1280px;
+  gap: 1.5rem;
 }
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 800;
   color: var(--text-title);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logo span.icon {
@@ -153,8 +157,10 @@ a:hover {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2rem;
   list-style: none;
+  margin-left: auto;
 }
 
 .nav-links a {
@@ -162,7 +168,8 @@ a:hover {
   font-weight: 500;
   font-size: 0.95rem;
   position: relative;
-  padding: 0.2rem 0;
+  padding: 0.3rem 0;
+  white-space: nowrap;
 }
 
 .nav-links a::after {
@@ -188,6 +195,8 @@ a:hover {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: 2.25rem;
+  flex-shrink: 0;
 }
 
 /* Button Component */
@@ -983,6 +992,35 @@ textarea.form-control {
 
   .timeline-dot {
     left: 6px;
+  }
+
+/* Responsive Navbar Spacing */
+@media (max-width: 1250px) {
+  .nav-links {
+    gap: 1.25rem;
+  }
+  .nav-actions {
+    margin-left: 1.25rem;
+  }
+  .nav-links a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .nav-links {
+    margin-left: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav-actions {
+    margin-left: 0;
   }
 }
 
